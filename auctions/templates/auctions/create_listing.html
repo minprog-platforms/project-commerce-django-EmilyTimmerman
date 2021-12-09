@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+    {% if submitted %}
+    <h1>Thanks for your submission!</h1>
+
+    {% else %}
+
+    <form action="" method=POST>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" class="btn btn-warning">
+    </form>
+    {% endif %}
+{% endblock %}

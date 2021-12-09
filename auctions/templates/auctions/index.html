@@ -3,5 +3,13 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    TODO
+    {% for listing in listings %}
+        <img src={{ listing.picture }} alt="auction listing item" width="250" height="300">
+        <li>{{ listing.title }}</li>
+        <li>{{ listing.price }}</li>
+        <li>{{ listing.description}}</li>
+        <a class="nav-link" href="/{{ listing.id }}">Go there</a>
+    {% empty %}
+        <h2>Currently no items</h2>
+    {% endfor %}
 {% endblock %}
